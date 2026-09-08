@@ -1,0 +1,123 @@
+/* 全局基础样式：统一盒模型并设置页面字体 */
+* {
+    box-sizing: border-box;
+}
+
+/* 页面背景与居中布局 */
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    color: #23313d;
+    background: #edf4f5;
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+/* 使用 Flex 布局，让名片在页面中水平、垂直居中 */
+.page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+/* 名片主体：12px 圆角、柔和阴影与悬停上浮动画 */
+.profile-card {
+    width: min(100%, 390px);
+    padding: 42px 36px 36px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 16px 40px rgba(44, 74, 82, 0.12);
+    transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+/* 鼠标悬停时卡片轻微上浮，并增强阴影层次 */
+.profile-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 48px rgba(44, 74, 82, 0.18);
+}
+
+/* 圆形头像 */
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 22px;
+    color: #ffffff;
+    background: #3b8d8a;
+    border: 6px solid #e1f0ef;
+    border-radius: 50%;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* 姓名与职位信息 */
+.profile-info h1 {
+    margin: 0;
+    color: #1f3038;
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+.job-title {
+    margin: 8px 0 16px;
+    color: #3b8d8a;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.introduction {
+    margin: 0 auto 28px;
+    max-width: 270px;
+    color: #74828a;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* 联系方式区域 */
+.contact-list {
+    display: grid;
+    gap: 12px;
+    padding-top: 24px;
+    border-top: 1px solid #e8eeee;
+    font-style: normal;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #52636b;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 180ms ease;
+}
+
+.contact-item:hover {
+    color: #3b8d8a;
+}
+
+.contact-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    color: #3b8d8a;
+    font-size: 17px;
+}
+
+/* 小屏幕下减少卡片内边距，避免内容拥挤 */
+@media (max-width: 480px) {
+    .page-container {
+        padding: 16px;
+    }
+
+    .profile-card {
+        padding: 34px 24px 28px;
+    }
+}
